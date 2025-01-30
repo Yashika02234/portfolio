@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .floating-nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 10px 20px;
+            display: flex;
+            gap: 50px;
+            box-shadow: 0px 4px 10px rgba(41, 40, 40, 0.434);
+        }
+        .floating-nav a {
+            font-size: 1rem;
+            color: white;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .floating-nav a:hover {
+            color: #4ac3de;
+            transform: scale(1.2);
+        }
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 30px;
+            width: 65px; 
+            height: 80px;
+            object-fit: contain;
+            z-index: 10;
+        }
+        .intro-text {
+            font-size: 6vw;
+            line-height: 1.2;
+        }
+        .intro-text:hover {
+            color: #4aded2;
+            transform: scale(1);
+            letter-spacing: 5px;
+        }
+        .intro-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.4s ease-in-out;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            margin: 10px;
+        }
+        .btn:hover {
+            background: #4aded2;
+            color: black;
+            transform: scale(1.1);
+        }
+        .skill-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(74, 222, 210, 0.5);
+        }
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .experience-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            padding: 16px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(74, 222, 210, 0.5);
+        }
+        .icon {
+            min-width: 50px;
+            min-height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        .icon img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <img src="your-logo-url.png" alt="Yashika Agrawal" class="logo">
+
+    <section class="h-screen flex px-8 mt-24"> <!-- Added margin-top to avoid mixing with the navbar -->
+        <!-- Left Half (Text Section) -->
+        <div class="flex-1 flex justify-center items-center text-left">
+            <h2 class="intro-text font-bold">Designing Tomorrow, Today...</h2>
+        </div>
+        
+        <!-- Right Half (Image Section) -->
+        <div class="flex-1 bg-gray-100 bg-opacity-50 flex justify-center items-center"> 
+            <img src="your-image-url.jpg" alt="Your Picture" class="intro-image">
+        </div>
+    </section>
+
+
+    <div class="button-container">
+        <a href="#contact" class="btn">Get in Touch</a>
+        <a href="your-cv.pdf" class="btn" download>Download CV</a>
+    </div>
+
+    <!-- Floating Navbar -->
+    <div class="floating-nav">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+      <!-- Hero Section -->
+      <section class="h-screen flex flex-col justify-center items-center text-center">
+        <h2 class="text-4xl font-extrabold">Hi, I'm <span class="text-blue-400">Yashika Agrawal</span></h2>
+        <p class="text-lg text-gray-400 mt-3">Software Developer | UI/UX Enthusiast</p>
+        <p class="text-md text-gray-300 max-w-2xl mt-4 leading-relaxed">
+            Passionate about crafting seamless digital experiences through 
+            clean code and intuitive design. I specialize in 
+            building modern web applications that are both visually 
+            appealing and highly functional.
+        </p>
+        <a href="#projects" class="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md">View My Work</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800 text-center text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-3xl font-bold border-b-4 border-blue-400 pb-3 inline-block">About Me</h3>
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                I'm a passionate frontend developer who loves building interactive, user-friendly websites. 
+                Currently improving my skills in JavaScript, React, and UI design.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-extrabold text-center border-b-4 border-blue-400 pb-3 inline-block">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+                <!-- Skill Cards -->
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="skill-icon">
+                    <p>HTML5</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="skill-icon">
+                    <p>CSS3</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJS" class="skill-icon">
+                    <p>ReactJS</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="skill-icon">
+                    <p>Tailwind CSS</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" class="skill-icon">
+                    <p>NodeJS</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="skill-icon">
+                    <p>MongoDB</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon">
+                    <p>Python</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-16 bg-blue-100 bg-opacity-40 text-gray-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-extrabold text-center border-b-4 border-blue-400 pb-3 inline-block">Experience</h2>
+            <div class="mt-12 space-y-8 relative border-l-4 border-blue-400 pl-6">
+                <div class="experience-card">
+                    <div class="icon bg-green-500">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2769/2769345.png" alt="Leadership">
+                    </div>
+                    <div class="content">
+                        <h3 class="text-1xl font-semibold">Class Representative</h3>
+                        <p class="text-gray-700 mt-2">
+                            Represented my class, showcasing leadership and strong communication skills.
+                        </p>
+                        <span class="text-sm text-gray-500">OCTOBER 2023 | PRESENT</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="icon bg-purple-500">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" alt="Hackathon">
+                    </div>
+                    <div class="content">
+                        <h3 class="text-1xl font-semibold">Hackathon (HackIIITV)</h3>
+                        <p class="text-gray-700 mt-2">
+                            Developed a fully functional website using front-end technologies in a 36-hour coding marathon.
+                        </p>
+                        <span class="text-sm text-gray-500">IIITV</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 text-center">
+        <h3 class="text-3xl font-bold">Projects</h3>
+        <p class="text-gray-400 mt-4">Check out some of my work.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-6">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h4 class="text-xl font-bold">Project One</h4>
+                <p class="text-gray-400 mt-2">A cool web app using React.js.</p>
+                <a href="#" class="text-blue-400 hover:underline">View Project</a>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h4 class="text-xl font-bold">Project Two</h4>
+                <p class="text-gray-400 mt-2">A responsive portfolio built with Tailwind CSS.</p>
+                <a href="#" class="text-blue-400 hover:underline">View Project</a>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h4 class="text-xl font-bold">Project Three</h4>
+                <p class="text-gray-400 mt-2">A fun Python project to automate tasks.</p>
+                <a href="#" class="text-blue-400 hover:underline">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white text-center">
+        <h3 class="text-3xl font-bold">Contact Me</h3>
+        <p class="text-gray-400 mt-4">Feel free to reach out to me!</p>
+        <form action="#" method="POST" class="mt-8 max-w-2xl mx-auto">
+            <input type="text" name="name" placeholder="Your Name" required class="p-3 w-full bg-gray-800 border border-gray-700 text-white rounded-lg mb-4">
+            <input type="email" name="email" placeholder="Your Email" required class="p-3 w-full bg-gray-800 border border-gray-700 text-white rounded-lg mb-4">
+            <textarea name="message" rows="6" placeholder="Your Message" required class="p-3 w-full bg-gray-800 border border-gray-700 text-white rounded-lg"></textarea>
+            <button type="submit" class="btn mt-6">Send Message</button>
+        </form>
+    </section>
+
+</body>
+</html>
