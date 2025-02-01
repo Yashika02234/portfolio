@@ -6,6 +6,8 @@
     <title>Portfolio - Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -180,17 +182,49 @@
             height: 30px;}
 
         .intro-image {
-    width: 1000%; 
-    max-width: 900px; 
-    transform: scale(1.5) translateY(-100px);
+    width: 900%; 
+    max-width: 600px; 
+    transform: scale(1.4) translateY(-200px);
     margin-top: 0;
-    clip-path: inset(10% 10% 20% 10%);
+    clip-path: inset(0% 0% 0% 0%);
 
 
         }
+        
     </style>
 </head>
 <body class="bg-black text-white">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("form").addEventListener("submit", function (event) {
+                event.preventDefault();
+        
+                const formData = {
+                    name: document.querySelector('input[name="name"]').value,
+                    email: document.querySelector('input[name="email"]').value,
+                    message: document.querySelector('textarea[name="message"]').value
+                };
+        
+                // Store in Local Storage
+                localStorage.setItem("formSubmission", JSON.stringify(formData));
+                alert("Form data saved locally!");
+            });
+        
+            // Display stored data
+            const storedData = JSON.parse(localStorage.getItem("formSubmission"));
+            if (storedData) {
+                document.body.innerHTML += `
+                    <div class="mt-8 p-4 border border-gray-700 text-white">
+                        <h3 class="text-2xl font-bold">Stored Form Data</h3>
+                        <p><strong>Name:</strong> ${storedData.name}</p>
+                        <p><strong>Email:</strong> ${storedData.email}</p>
+                        <p><strong>Message:</strong> ${storedData.message}</p>
+                    </div>
+                `;
+            }
+        });
+        </script>
+        
 
 
     <img src="images/logo.png" alt="Yashika Agrawal" class="logo">
@@ -207,7 +241,7 @@
         
         <!-- Right Half (Image Section) -->
         <div class="flex justify-center items-center w-1/2">
-            <img src="images/portfolio-removebg.png" alt="Your Picture" class="intro-image">
+            <img src="images/p1.png" alt="Your Picture" class="intro-image">
 
         </div>
     </section>
@@ -372,6 +406,41 @@
             <button type="submit" class="btn mt-6">Send Message</button>
         </form>
     </section>
+    <footer class="bg-black-900 text-white py-8 mt-16">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+            
+            <!-- Left: Contact Information -->
+            <div class="text-center md:text-left mb-6 md:mb-0">
+                <h3 class="text-xl font-semibold mb-2">Contact Me</h3>
+                <p>Email: 
+                    <a href="mailto:yashikaagrawal3839@gmail.com" class="text-blue-400 hover:underline">yashikaagrawal3839@gmail.com</a>
+                </p>
+                <p>Phone: 
+                    <a href="tel:7414860322" class="text-blue-400 hover:underline">7414860322</a>
+                </p>
+            </div>
+    
+            <!-- Right: Social Media Links -->
+            <div class="flex space-x-6">
+                <a href="https://github.com/Yashika02234" target="_blank" class="hover:text-blue-400">
+                    <i class="fab fa-github text-3xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/yashika-agrawal-580a772ab/" target="_blank" class="hover:text-blue-400">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+                <a href="https://instagram.com/__yashika_agarwal__" target="_blank" class="hover:text-pink-400">
+                    <i class="fab fa-instagram text-3xl"></i>
+                </a>
+            </div>
+        </div>
+    
+        <!-- Copyright -->
+        <div class="text-center text-gray-400 text-sm mt-6">
+            &copy; 2025 Yashika Agrawal. All rights reserved.
+        </div>
+    </footer>
+    
+    
 
 </body>
 </html>
